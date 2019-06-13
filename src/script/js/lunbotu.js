@@ -4,6 +4,7 @@
     let desc = $('.brick-item-m-2 .desc');
     let price = $('.brick-item-m-2 .price>.num');
     let pricelater = $('.brick-item-m-2 .price del .num');
+    let j = -1;
     // let imm = $('.brick-item-m-2');
     // console.log(title,img,desc,price,pricelater);
     $.ajax({
@@ -18,19 +19,19 @@
             let a = JSON.parse(d);
             // console.log(a);
 
-            for(let i = 0,j = -1; i < a.length; i ++){
+            $.each(a,function(i,n){
                 j++;
-                img[i].src = a[i].src;
-                title[i].innerText = a[i].title;
-                desc[i].innerText = a[i].desc;
-                price[i].innerText = a[i].price;
-                if(a[i].pricelater){
+                img[i].src = n.src;
+                title[i].innerText = n.title;
+                desc[i].innerText = n.desc;
+                price[i].innerText = n.price;
+                if(n.pricelater){
                     // console.log(pricelater[j]);
-                    pricelater[j].innerText = a[i].pricelater;
+                    pricelater[j].innerText = n.pricelater;
                 }else{
                     j--;
                 }
-            }
+            })
 
             // img[2].src = a[0].src;
             // title[2].innerText = a[0].title;

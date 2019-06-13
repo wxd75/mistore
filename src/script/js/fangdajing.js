@@ -76,19 +76,19 @@
             //限制在区域内； 要放在上面 为了好写定义两个变量储存一下
             var l = mouseX - this.spic.offsetLeft - this.sf.offsetWidth / 2;
             var t = mouseY - this.spic.offsetTop - this.sf.offsetHeight / 2;
-            console.log(this.spic.Left,this.spic.offsetTop);
+            // console.log(this.spic.offsetLeft,this.spic.offsetTop);
             // console.log(l,t);
             //设置滑块的位置   减去自身一半 减去margin
-            // if (l <= 0) {
-            //     l = 0;
-            // } else if (l >= this.spic.offsetWidth - this.sf.offsetWidth) {
-            //     l = this.spic.offsetWidth - this.sf.offsetWidth - 2;
-            // }
-            // if (t <= 0) {
-            //     t = 0;
-            // } else if (t >= this.spic.offsetHeight - this.sf.offsetHeight) {
-            //     t = this.spic.offsetHeight - this.sf.offsetHeight - 2;
-            // }
+            if (l <= 0) {
+                l = 0;
+            } else if (l >= this.spic.offsetWidth - this.sf.offsetWidth) {
+                l = this.spic.offsetWidth - this.sf.offsetWidth - 2;
+            }
+            if (t <= 0) {
+                t = 0;
+            } else if (t >= this.spic.offsetHeight - this.sf.offsetHeight) {
+                t = this.spic.offsetHeight - this.sf.offsetHeight - 2;
+            }
             this.sf.style.left = l + 'px';
             this.sf.style.top = t + 'px';
             //限制在区域内； 要放在上面 为了好写定义两个变量储存一下

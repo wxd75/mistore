@@ -77,3 +77,47 @@ function xmsearch(data) {
         $('#J_keywordList').append(li);
     }
 }
+
+class load {
+    constructor() {
+        this.picid = location.search.substring(1).split('=')[1];
+        this.head = $('.J_navSwitch .J_proName');
+        this.headtitle = $('.J_navSwitch .con .left a');
+        this.title = $('.pro-choose-main .pro-info .pro-title .name');
+        this.jj = $('.pro-choose-main .pro-info .sale-desc span');
+        this.price = $('.pro-choose-main .pro-info .J_main .pro-price .price b');
+        this.bottomtitle = $('.pro-choose-main .pro-info .J_main .pro-list ul li:first b');
+        this.bottomprice = $('.pro-choose-main .pro-info .J_main .pro-list ul li:first span b');
+        this.sumprice = $('.pro-choose-main .pro-info .J_main .pro-list ul .totlePrice b');
+
+        this.viewimg = $('.pro-choose-main .pro-view .tab .spic img');
+        this.bigimg = $('.pro-choose-main .pro-view .bf img');
+    }
+
+    lo() {
+        // console.log(this.sumprice);
+        let that = this;
+        $.ajax({
+            url: "http://10.31.164.49/mistore/php/chuan.php",
+            data: {
+                sid: this.picid
+            },
+            dataType: "json"
+        }).done(function (d) {
+            console.log(d);
+            that.head[0].innerText = d.head;
+            that.headtitle[0].innerText = d.title;
+            that.title[0].innerText = d.title;
+            that.jj[0].innerText = d.jj;
+            that.price[0].innerText = d.price;
+            that.bottomtitle[0].innerText = d.title;
+            that.bottomprice[0].innerText = d.price;
+            that.sumprice[0].innerText = d.price;
+            that.viewimg[0].src = d.img;
+            that.bigimg[0].src = d.img;
+        })
+    }
+}
+
+new load().lo();
+

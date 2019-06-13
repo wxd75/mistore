@@ -216,4 +216,23 @@ function xmsearch(data) {
     }
 }
 
-            //taobao({"result":[]})
+//taobao({"result":[]})
+
+
+class zhuan {
+    constructor() {
+        this.con1 = $('.brick-item-m-2');
+        this.a = $('.brick-item-m-2 a')
+    }
+
+    tiao() {
+        // let that = this;
+        for (let i = 0; i < this.a.length/2; i++) {
+            this.a[2*i].href += i+1;
+            this.a[2*i+1].href += i+1;
+        }
+
+        
+    }
+}
+new zhuan().tiao()
