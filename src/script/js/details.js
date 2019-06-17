@@ -131,15 +131,43 @@ class addcart {      //加购
 
     add() {
         let _this = this;
-        this.addcart.on('click',function(){
+
+        this.addcart.on('click', function () {
+            let sid =  [];
+            let num =  [];
+            if ($.cookie('goodsid') && $.cookie('goodsidnum')) {
+                sid = $.cookie('goodsid').split(',');
+                num = $.cookie('goodsidnum').split(',');
+            }
             //点击往cookie加当前页面上id的
             // console.log(_this.picid);
-            let arr1 = [123123,123123123123123],
-                arr2 = [123123123,23454322432];
-            $.cookie(arr1.join(','),arr2.join(','),{ expires: 1});
-            // cookietoarray();
+            // let id = ''; //放商品id
+            // let num = $.cookie('goodsidnum');
+            let cookie = $.cookie('goodsid');
+            if (cookie) {  //存在 就不是第一次
+                // let id = [$.cookie('goodsid')]; //放商品id
+                if (sid.indexOf(_this.picid) != -1) {// 如果有 查询当前id的cookie位置 然后用这个位置找到num的位置再把这个位置的值加 1 再返回
+                    let a = Number(num[sid.indexOf(_this.picid)]);
+                    console.log(a);
+                    num[sid.indexOf(_this.picid)] = a + 1;
+                    $.cookie('goodsidnum', num.toString(), { expires: 1 });
+                } else {//如果没有
+                    sid.push(_this.picid);
+                    num.push('1');
+                    $.cookie('goodsid', sid.toString(), { expires: 1 });
+                    $.cookie('goodsidnum', num.toString(), { expires: 1 });
+                }
+            } else {   //真正的第一次 
+                sid.push(_this.picid);
+                num.push('1');
+                $.cookie('goodsid', sid.toString(), { expires: 1 });
+                $.cookie('goodsidnum', num.toString(), { expires: 1 });
+            }
+            alert('添加成功');
         })
     }
+
+
 }
 
 new addcart().add();
