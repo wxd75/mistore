@@ -79,6 +79,7 @@
 
 <body>
     <script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <script src="script/js/jquery.cookie.js"></script>
     <div class="site-topbar">
         <div class="container">
             <div class="topbar-nav">
@@ -106,7 +107,7 @@
                     <span class="box"
                         style="width:124px;position: absolute; top: 40px;left: 50%;padding: 18px 0 14px;background: #fff;margin-left: -55px; box-shadow: #aaa 0px 1px 5px;display:none;"><em
                             style="width:0;height:0;border-width:0 10px 10px;border-style:solid;border-color:transparent transparent #fff;position:absolute;top:-10px;left:50px;"></em><img
-                            src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" alt="小米商城" width="90"
+                           src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" alt="小米商城" width="90"
                             height="90" style="display:block;margin: 0 auto;"><span
                             style="display:block;text-align: center;font-size:14px;color:#333;line-height:1;margin-top:14px;">小米商城APP</span></span></a>
                 <span class="sep">|</span>
@@ -115,7 +116,7 @@
                     Region</a>
             </div>
             <div class="topbar-cart" id="J_miniCartTrigger">
-                <a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="https://static.mi.com/cart/"
+                <a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="cart.html"
                     data-stat-id="993329c4d3756bcd"><i class="iconfont"></i>购物车<span
                         class="cart-mini-num J_cartNum">（0）</span></a>
                 <div class="cart-menu" id="J_miniCartMenu">
@@ -125,14 +126,17 @@
                 </div>
             </div>
             <div class="topbar-info" id="J_userInfo">
-                <a rel="nofollow" class="link" href="javascript:void(0);" data-agreement="true" data-login="true"
+                <a rel="nofollow" class="link" href="login.html" data-agreement="true" data-login="true"
                     data-href="//order.mi.com/site/login?redirectUrl=https://www.mi.com/"
                     data-stat-id="2f616d176624bee4">登录</a><span class="sep">|</span><a rel="nofollow" class="link"
-                    href="javascript:void(0);" data-agreement="true" data-register="true"
+                    href="registor.html" data-agreement="true" data-register="true"
                     data-href="https://account.xiaomi.com/pass/register" data-stat-id="14045e83c802f684">注册</a>
+                    <a rel="nofollow" class="loginture" style="display:none;"><span class="username"></span>欢迎您！</a>
+                    <a rel="nofollow" class="exit" style="display:none;">退出</a>
                 <span class="sep">|</span><span class="message"><a rel="nofollow"
                         data-href="//order.mi.com/message/list" class="J_needAgreement" data-login="true"
-                        data-stat-id="4d1a64ff80623660">消息通知<i class="J_miMessageTotal"></i></a></span></div>
+                        data-stat-id="4d1a64ff80623660">消息通知<i class="J_miMessageTotal"></i></a></span>
+            </div>
         </div>
     </div>
     <div class="site-header">
@@ -155,37 +159,37 @@
                                         <ul class="children-list children-list-col children-list-col-1">
                                             <li> <a class="link" href="https://www.mi.com/mi9/"
                                                     data-stat-id="c68c5ef5bd88d4ce"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米9</span></a>
                                             </li>
                                             <li> <a class="link" href="https://www.mi.com/mi9se/"
                                                     data-stat-id="5b825ddf96d785ad"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9se-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米9
                                                         SE</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/mix3/"
                                                     data-stat-id="47da862014d3df03"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/mix3-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米MIX
                                                         3</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/mi8youth/"
                                                     data-stat-id="9a398d479844cc04"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/qingchun-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米8
                                                         青春版</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/mi8ud/"
                                                     data-stat-id="9b5641b2347cefa8"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/pingmu-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米8
                                                         屏幕指纹版</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/mi8/"
                                                     data-stat-id="2f4b1bc4afd40b65"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米8</span></a>
                                             </li>
@@ -193,37 +197,37 @@
                                         <ul class="children-list children-list-col children-list-col-2">
                                             <li> <a class="link" href="https://www.mi.com/mi8i/"
                                                     data-stat-id="5b7f06788fee7076"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/m8se-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米8
                                                         SE</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/mix2s/"
                                                     data-stat-id="59aa7032d5db8b3a"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/mix2s80-80white.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米MIX
                                                         2S</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/max3/"
                                                     data-stat-id="85526ef3aecaeadf"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/max3-80-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米Max
                                                         3</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/mi6x/"
                                                     data-stat-id="b1542a6871a700f1"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/80808080808080.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米6X</span></a>
                                             </li>
                                             <li> <a class="link" href="https://www.mi.com/blackshark-game2/"
                                                     data-stat-id="873e4789434f004d"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/2019/blacksharkg2/123.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">黑鲨游戏手机
                                                         2</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/blackshark2/"
                                                     data-stat-id="51a304ea2b4df55d"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/heishahelo-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">黑鲨游戏手机
                                                         Helo</span></a> </li>
@@ -231,37 +235,37 @@
                                         <ul class="children-list children-list-col children-list-col-3">
                                             <li> <a class="link" href="https://www.mi.com/redmik20pro/"
                                                     data-stat-id="705d3bd1e8f591f5"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/2019/redmik20pro/hongse-1.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">Redmi K20
                                                         Pro</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/redmik20/"
                                                     data-stat-id="3267c0474dac42be"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/2019/redmik20/lanse-1.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">Redmi
                                                         K20</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/redmi7a/"
                                                     data-stat-id="3d0d4feccdd7ff00"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/2019/redmi7a/heisedi.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">Redmi
                                                         7A</span></a> </li>
                                             <li> <a class="link" href="https://item.mi.com/product/10000138.html"
                                                     data-stat-id="29e2ba345a99d569"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/2019/redmi7/800-800.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">Redmi
                                                         7</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/redminote7pro/"
                                                     data-stat-id="3d9bb1d211ef267e"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/redminote7pro.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">Redmi Note 7
                                                         Pro</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/redminote7/"
                                                     data-stat-id="2fd6613b15da480d"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/note780-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">Redmi Note
                                                         7</span></a> </li>
@@ -269,37 +273,37 @@
                                         <ul class="children-list children-list-col children-list-col-4">
                                             <li> <a class="link" href="https://www.mi.com/p/5592.html"
                                                     data-stat-id="763d8e6424ab0e7c"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/80.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span
                                                         class="text">移动4G+专区</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/compare/"
                                                     data-stat-id="c46d99dbcaf27525"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/15/goods/sidebar/compare.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">对比手机</span></a>
                                             </li>
                                             <li> <a class="link" href="https://www.mi.com/micard"
                                                     data-stat-id="2f91e4e687a10faf"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/mifenka-1.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">米粉卡
                                                         日租卡</span></a> </li>
                                             <li> <a class="link" href="https://www.mi.com/mimobile/"
                                                     data-stat-id="97128e5ff75aaed4"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/15/goods/sidebar/mimobile.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span class="text">小米移动
                                                         电话卡</span></a> </li>
                                             <li> <a class="link" href="https://item.mi.com/product/7532.html"
                                                     data-stat-id="f9530eb44ff8e1b8"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/weixiu80-80.png?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span
                                                         class="text">手机上门维修</span></a> </li>
                                             <li> <a class="link" href="https://item.mi.com/product/8262.html"
                                                     data-stat-id="4b1625e9c5633775"><img class="thumb"
-                                                        src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
+                                                       src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-80.png?width=80&height=80"
                                                         data-src="https://i1.mifile.cn/f/i/g/2015/yunfuwu.jpg?width=80&amp;height=80"
                                                         width="40" height="40" alt=""><span
                                                         class="text">云服务空间月卡</span></a> </li>
@@ -364,7 +368,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/mi9/" data-stat-id="76729f2917e0b359"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-76729f2917e0b359&#39;, &#39;https://www.mi.com/mi9/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png"
                                                     data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt="小米9"
                                                     width="160" height="110"></a>
                                         </div>
@@ -378,7 +382,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/mi9se/" data-stat-id="bc3ae55c57584d9b"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-bc3ae55c57584d9b&#39;, &#39;https://www.mi.com/mi9se/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9se-320.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9se-320.png"
                                                     data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9se-320.png"
                                                     alt="小米9 SE" width="160" height="110"></a>
                                         </div>
@@ -392,7 +396,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/mi8youth/" data-stat-id="8e888d929618c349"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-8e888d929618c349&#39;, &#39;https://www.mi.com/mi8youth/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/qingchun-320.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/qingchun-320.png"
                                                     data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/qingchun-320.png"
                                                     alt="小米8 青春版" width="160" height="110"></a>
                                         </div>
@@ -406,7 +410,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/mix3/" data-stat-id="7534b5f810118349"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-7534b5f810118349&#39;, &#39;https://www.mi.com/mix3/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/mix3-320.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/mix3-320.png"
                                                     data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/mix3-320.png"
                                                     alt="小米MIX 3" width="160" height="110"></a>
                                         </div>
@@ -420,7 +424,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/mi8/" data-stat-id="6bbe9c0ee0780df6"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-6bbe9c0ee0780df6&#39;, &#39;https://www.mi.com/mi8/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-220-mi8.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-220-mi8.png"
                                                     data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-220-mi8.png"
                                                     alt="小米8" width="160" height="110"></a>
                                         </div>
@@ -434,7 +438,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/miplay/" data-stat-id="8afd7744b512f16e"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-8afd7744b512f16e&#39;, &#39;https://www.mi.com/miplay/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
                                                     data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
                                                     alt="小米Play" width="160" height="110"></a>
                                         </div>
@@ -461,7 +465,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/redmik20pro/" data-stat-id="58e1f68cb99dbeef"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-58e1f68cb99dbeef&#39;, &#39;https://www.mi.com/redmik20pro/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
                                                     data-src="https://i1.mifile.cn/f/i/2019/redmik20pro/red.jpg"
                                                     alt="Redmi K20 Pro" width="160" height="110"></a>
                                         </div>
@@ -478,7 +482,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/redmik20/" data-stat-id="b959eced2c26f6ac"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-b959eced2c26f6ac&#39;, &#39;https://www.mi.com/redmik20/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
                                                     data-src="https://i1.mifile.cn/f/i/2019/redmik20/lanse.jpg"
                                                     alt="Redmi K20" width="160" height="110"></a>
                                         </div>
@@ -495,7 +499,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/redmi7a/" data-stat-id="e6c641d98af46c6a"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-e6c641d98af46c6a&#39;, &#39;https://www.mi.com/redmi7a/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
                                                     data-src="https://i1.mifile.cn/f/i/2019/redmi7a/black.jpg" alt="Redmi 7A"
                                                     width="160" height="110"></a>
                                         </div>
@@ -512,7 +516,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/redminote7pro/" data-stat-id="0a1074c537063216"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-0a1074c537063216&#39;, &#39;https://www.mi.com/redminote7pro/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
                                                     data-src="https://i1.mifile.cn/f/i/g/2019/redmi.jpg"
                                                     alt="Redmi Note 7 Pro" width="160" height="110"></a>
                                         </div>
@@ -526,7 +530,7 @@
                                         <div class="figure figure-thumb">
                                             <a href="https://www.mi.com/redminote7/" data-stat-id="e9b24013463ebbe2"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-e9b24013463ebbe2&#39;, &#39;https://www.mi.com/redminote7/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
                                                     data-src="https://i1.mifile.cn/f/i/g/2015/cn-index/note7320-220.png"
                                                     alt="Redmi Note 7" width="160" height="110"></a>
                                         </div>
@@ -541,7 +545,7 @@
                                             <a href="https://www.mi.com/redmi7/?cfrom=search"
                                                 data-stat-id="4cd52c43d62b1165"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-4cd52c43d62b1165&#39;, &#39;https://www.mi.com/redmi7/cfrom=search&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                                                    src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
+                                                   src="https://i1.mifile.cn/f/i/g/2015/cn-index/pc-320-miplay-1.png"
                                                     data-src="https://i1.mifile.cn/f/i/2019/redmi7/320-220.png"
                                                     alt="Redmi 7" width="160" height="110"></a>
                                         </div>
@@ -607,6 +611,7 @@
             </div>
         </div>
     </div>
+
     <div class="home-hero-container container">
         <div class="home-hero">
             <div class="home-hero-slider">
@@ -621,7 +626,7 @@
                                     data-stat-pid="2_15_1_67"
                                     data-log_code="31pchometop_slide001001#t=normal&amp;act=other&amp;page=home&amp;bid=3030335.1&amp;adm=6320"
                                     target="_blank" data-stat-id="AA21939+2_15_1_67"><img
-                                        src="https://i1.mifile.cn/a4/xmad_15596619751435_OXcxi.jpg"
+                                       src="https://i1.mifile.cn/a4/xmad_15596619751435_OXcxi.jpg"
                                         srcset="//i1.mifile.cn/a4/xmad_15596619806975_FNhxX.jpg 2x"></a>
                             </div>
 
@@ -631,7 +636,7 @@
                                 <a href="https://www.mi.com/redmik20/" data-stat-aid="AA21940" data-stat-pid="2_15_2_68"
                                     data-log_code="31pchometop_slide002001#t=normal&amp;act=other&amp;page=home&amp;bid=3030335.2&amp;adm=6333"
                                     target="_blank" data-stat-id="AA21940+2_15_2_68"><img
-                                        src="https://i1.mifile.cn/a4/xmad_15599116904992_jkJAz.jpg"
+                                       src="https://i1.mifile.cn/a4/xmad_15599116904992_jkJAz.jpg"
                                         srcset="//i1.mifile.cn/a4/xmad_15599116976497_abrVA.jpg 2x"></a>
                             </div>
 
@@ -642,7 +647,7 @@
                                     data-stat-pid="2_15_3_69"
                                     data-log_code="31pchometop_slide003001#t=normal&amp;act=other&amp;page=home&amp;bid=3030335.3&amp;adm=6295"
                                     target="_blank" data-stat-id="AA21915+2_15_3_69"><img
-                                        src="https://i1.mifile.cn/a4/xmad_15593971067493_BzRsF.jpg"
+                                       src="https://i1.mifile.cn/a4/xmad_15593971067493_BzRsF.jpg"
                                         srcset="//i1.mifile.cn/a4/xmad_15593971123559_xLEoF.jpg 2x"></a>
                             </div>
 
@@ -653,7 +658,7 @@
                                     data-stat-pid="2_15_4_70"
                                     data-log_code="31pchometop_slide004001#t=normal&amp;act=other&amp;page=home&amp;bid=3030335.4&amp;adm=6331"
                                     target="_blank" data-stat-id="AA21936+2_15_4_70"><img
-                                        src="https://i1.mifile.cn/a4/xmad_15598152208488_eRDZE.jpg"
+                                       src="https://i1.mifile.cn/a4/xmad_15598152208488_eRDZE.jpg"
                                         srcset="//i1.mifile.cn/a4/xmad_15598152921114_mwUrT.jpg 2x"></a>
                             </div>
 
@@ -664,7 +669,7 @@
                                     data-stat-pid="2_15_5_71"
                                     data-log_code="31pchometop_slide005001#t=normal&amp;act=other&amp;page=home&amp;bid=3030335.5&amp;adm=6294"
                                     target="_blank" data-stat-id="AA21890+2_15_5_71"><img
-                                        src="https://i1.mifile.cn/a4/xmad_15593143785816_iOTuH.jpg"
+                                       src="https://i1.mifile.cn/a4/xmad_15593143785816_iOTuH.jpg"
                                         srcset="//i1.mifile.cn/a4/xmad_15593143811797_zxNCX.jpg 2x"></a>
                             </div>
                         </div>
@@ -721,6 +726,8 @@
                                 target="_blank" data-stat-id="AA10871+2_44_6_255"><i class="iconfont"></i>话费充值</a></li>
                     </ul>
                 </div>
+
+                <!-- 渐变下方 -->
                 <div class="span16" id="J_homePromo" data-stat-title="焦点图下方小图">
                     <ul class="home-promo-list clearfix">
                         <li class="first">
@@ -728,7 +735,7 @@
                                 data-stat-pid="2_16_1_77"
                                 data-log_code="31pchomethree_line001002#t=normal&amp;act=other&amp;page=home&amp;bid=3030336.1&amp;adm=6326"
                                 target="_blank" data-stat-id="AA21931+2_16_1_77"><img alt="note7 pro领劵100元"
-                                    src="https://i1.mifile.cn/a4/xmad_15597461751038_ZONRx.jpg"
+                                   src="https://i1.mifile.cn/a4/xmad_15597461751038_ZONRx.jpg"
                                     srcset="//i1.mifile.cn/a4/xmad_15597461801182_WGlMd.jpg 2x"></a>
                         </li>
                         <li>
@@ -736,7 +743,7 @@
                                 data-stat-pid="2_16_2_78"
                                 data-log_code="31pchomethree_line002002#t=normal&amp;act=other&amp;page=home&amp;bid=3030336.2&amp;adm=6308"
                                 target="_blank" data-stat-id="AA21905+2_16_2_78"><img alt="note7常规"
-                                    src="https://i1.mifile.cn/a4/xmad_15589747473883_mCjDP.jpg"
+                                   src="https://i1.mifile.cn/a4/xmad_15589747473883_mCjDP.jpg"
                                     srcset="//i1.mifile.cn/a4/xmad_15594893348394_VIaCE.jpg 2x"></a>
                         </li>
                         <li>
@@ -744,7 +751,7 @@
                                 data-stat-aid="AA21411" data-stat-pid="2_16_3_79"
                                 data-log_code="31pchomethree_line003002#t=normal&amp;act=other&amp;page=home&amp;bid=3030336.3&amp;adm=5663"
                                 target="_blank" data-stat-id="AA21411+2_16_3_79"><img alt="小米手环 3 NFC"
-                                    src="https://i1.mifile.cn/a4/xmad_15410599445473_Ivjsb.jpg"
+                                   src="https://i1.mifile.cn/a4/xmad_15410599445473_Ivjsb.jpg"
                                     srcset="//i1.mifile.cn/a4/xmad_15410599481599_tPFSB.jpg 2x"></a>
                         </li>
                     </ul>
@@ -754,17 +761,20 @@
 
 
 
-
+<!-- 第一张广告 -->
         <div class="J_itemBox J_homeBanner home-banner-box home-banner-box-hero is-visible" data-index="1"><a
                 href="https://www.mi.com/redmi7a/" target="_blank"
                 data-log_code="31pchomebanner_1001011#t=normal&amp;act=other&amp;page=home&amp;bid=3186790.1&amp;adm=6334"
                 data-stat-id="9a871224024e78f5">
-                <img class="" alt="7a中通新" width="1226" src="https://i1.mifile.cn/a4/xmad_15598284638071_regcA.jpg"></a>
+                <img class="" alt="7a中通新" width="1226"src="https://i1.mifile.cn/a4/xmad_15598284638071_regcA.jpg"></a>
         </div>
     </div>
-
+<!-- 内容区域 -->
     <div class="page-main home-main">
         <div class="container">
+
+
+            <!-- 11111111 -->
             <div id="phone"
                 class="home-brick-box home-brick-row-2-box xm-plain-box J_itemBox J_brickBox no-comment-total is-visible loaded"
                 data-from-stat="false">
@@ -781,22 +791,21 @@
                                         data-stat-aid="AA21933" data-stat-pid="2_57_1_331"
                                         data-log_code="31pchomephone_left001018#t=normal&amp;act=other&amp;page=home&amp;bid=3185160.1&amp;adm=6328"
                                         target="_blank" data-stat-id="AA21933+2_57_1_331"><img
-                                            src="https://i1.mifile.cn/a4/xmad_15597911116985_wSEjl.jpg" alt=""></a>
+                                        class="lazy" src="https://i1.mifile.cn/a4/xmad_15597911116985_wSEjl.jpg" alt=""></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="span16">
                             <ul class="brick-list clearfix">
                                 <li class="brick-item brick-item-m brick-item-m-2">
-                                    <div class="figure figure-img"> <a class="exposure"
-                                            href="details.html?sid=" data-stat-aid="AA21489"
-                                            data-stat-pid="2_58_1_333"
+                                    <div class="figure figure-img"> <a class="exposure" href="details.html?sid="
+                                            data-stat-aid="AA21489" data-stat-pid="2_58_1_333"
                                             data-log_code="31pchomephone_right_0001019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.1&amp;pid=2190800009&amp;adm=5963"
                                             target="_blank" data-stat-id="AA21489+2_58_1_333">
-                                            <img src="https://i1.mifile.cn/a1/pms_1550642182.7527088!220x220.jpg"
+                                            <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1550642182.7527088!220x220.jpg"
                                                 width="160" height="160" alt="小米9 6GB+128GB"> </a> </div>
-                                    <h3 class="title"><a href="details.html?sid="
-                                            data-stat-aid="AA21489" data-stat-pid="2_58_1_333"
+                                    <h3 class="title"><a href="details.html?sid=" data-stat-aid="AA21489"
+                                            data-stat-pid="2_58_1_333"
                                             data-log_code="31pchomephone_right_0001019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.1&amp;pid=2190800009&amp;adm=5963"
                                             target="_blank" data-stat-id="AA21489+2_58_1_333">小米9
                                             6GB+128GB</a></h3>
@@ -805,15 +814,14 @@
                                     <div class="flag flag-new">新品</div>
                                 </li>
                                 <li class="brick-item brick-item-m brick-item-m-2">
-                                    <div class="figure figure-img"> <a class="exposure"
-                                            href="details.html?sid=" data-stat-aid="AA21490"
-                                            data-stat-pid="2_58_2_334"
+                                    <div class="figure figure-img"> <a class="exposure" href="details.html?sid="
+                                            data-stat-aid="AA21490" data-stat-pid="2_58_2_334"
                                             data-log_code="31pchomephone_right_0002019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.2&amp;pid=2190800022&amp;adm=5964"
                                             target="_blank" data-stat-id="AA21490+2_58_2_334">
-                                            <img src="https://i1.mifile.cn/a1/pms_1550646283.24414368!220x220.jpg"
+                                            <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1550646283.24414368!220x220.jpg"
                                                 width="160" height="160" alt="小米9 SE 6GB+64GB"> </a> </div>
-                                    <h3 class="title"><a href="details.html?sid="
-                                            data-stat-aid="AA21490" data-stat-pid="2_58_2_334"
+                                    <h3 class="title"><a href="details.html?sid=" data-stat-aid="AA21490"
+                                            data-stat-pid="2_58_2_334"
                                             data-log_code="31pchomephone_right_0002019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.2&amp;pid=2190800022&amp;adm=5964"
                                             target="_blank" data-stat-id="AA21490+2_58_2_334">小米9
                                             SE 6GB+64GB</a></h3>
@@ -822,15 +830,14 @@
                                     <div class="flag flag-new">新品</div>
                                 </li>
                                 <li class="brick-item brick-item-m brick-item-m-2">
-                                    <div class="figure figure-img"> <a class="exposure"
-                                            href="details.html?sid=" data-stat-aid="AA21491"
-                                            data-stat-pid="2_58_3_335"
+                                    <div class="figure figure-img"> <a class="exposure" href="details.html?sid="
+                                            data-stat-aid="AA21491" data-stat-pid="2_58_3_335"
                                             data-log_code="31pchomephone_right_0003019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.3&amp;pid=2185200031&amp;adm=5965"
                                             target="_blank" data-stat-id="AA21491+2_58_3_335">
-                                            <img src="https://i1.mifile.cn/a1/pms_1547020852.30751177!220x220.jpg"
+                                            <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1547020852.30751177!220x220.jpg"
                                                 width="160" height="160" alt="Redmi Note 7 3GB+32G"> </a> </div>
-                                    <h3 class="title"><a href="details.html?sid="
-                                            data-stat-aid="AA21491" data-stat-pid="2_58_3_335"
+                                    <h3 class="title"><a href="details.html?sid=" data-stat-aid="AA21491"
+                                            data-stat-pid="2_58_3_335"
                                             data-log_code="31pchomephone_right_0003019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.3&amp;pid=2185200031&amp;adm=5965"
                                             target="_blank" data-stat-id="AA21491+2_58_3_335">Redmi
                                             Note 7 3GB+32G</a></h3>
@@ -839,15 +846,14 @@
                                     <div class="flag flag-new">新品</div>
                                 </li>
                                 <li class="brick-item brick-item-m brick-item-m-2">
-                                    <div class="figure figure-img"> <a class="exposure"
-                                            href="details.html?sid=" data-stat-aid="AA21492"
-                                            data-stat-pid="2_58_4_336"
+                                    <div class="figure figure-img"> <a class="exposure" href="details.html?sid="
+                                            data-stat-aid="AA21492" data-stat-pid="2_58_4_336"
                                             data-log_code="31pchomephone_right_0004019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.4&amp;pid=2185100025&amp;adm=5836"
                                             target="_blank" data-stat-id="AA21492+2_58_4_336">
-                                            <img src="https://i1.mifile.cn/a1/pms_1545457719.47232999!220x220.png"
+                                            <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1545457719.47232999!220x220.png"
                                                 width="160" height="160" alt="小米Play 4GB+64GB"> </a> </div>
-                                    <h3 class="title"><a href="details.html?sid="
-                                            data-stat-aid="AA21492" data-stat-pid="2_58_4_336"
+                                    <h3 class="title"><a href="details.html?sid=" data-stat-aid="AA21492"
+                                            data-stat-pid="2_58_4_336"
                                             data-log_code="31pchomephone_right_0004019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.4&amp;pid=2185100025&amp;adm=5836"
                                             target="_blank" data-stat-id="AA21492+2_58_4_336">小米Play
                                             4GB+64GB</a></h3>
@@ -856,15 +862,14 @@
                                     <div class="flag flag-new">新品</div>
                                 </li>
                                 <li class="brick-item brick-item-m brick-item-m-2">
-                                    <div class="figure figure-img"> <a class="exposure"
-                                            href="details.html?sid=" data-stat-aid="AA21493"
-                                            data-stat-pid="2_58_5_337"
+                                    <div class="figure figure-img"> <a class="exposure" href="details.html?sid="
+                                            data-stat-aid="AA21493" data-stat-pid="2_58_5_337"
                                             data-log_code="31pchomephone_right_0005019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.5&amp;pid=2183600010&amp;adm=5942"
                                             target="_blank" data-stat-id="AA21493+2_58_5_337">
-                                            <img src="https://i1.mifile.cn/a1/pms_1537324004.08544830!220x220.jpg"
+                                            <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1537324004.08544830!220x220.jpg"
                                                 width="160" height="160" alt="小米8青春版6GB+64GB"> </a> </div>
-                                    <h3 class="title"><a href="details.html?sid="
-                                            data-stat-aid="AA21493" data-stat-pid="2_58_5_337"
+                                    <h3 class="title"><a href="details.html?sid=" data-stat-aid="AA21493"
+                                            data-stat-pid="2_58_5_337"
                                             data-log_code="31pchomephone_right_0005019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.5&amp;pid=2183600010&amp;adm=5942"
                                             target="_blank" data-stat-id="AA21493+2_58_5_337">小米8青春版6GB+64GB</a>
                                     </h3>
@@ -874,15 +879,14 @@
                                     <div class="flag flag-saleoff"> 减 200 元 </div>
                                 </li>
                                 <li class="brick-item brick-item-m brick-item-m-2">
-                                    <div class="figure figure-img"> <a class="exposure"
-                                            href="details.html?sid=" data-stat-aid="AA21494"
-                                            data-stat-pid="2_58_6_338"
+                                    <div class="figure figure-img"> <a class="exposure" href="details.html?sid="
+                                            data-stat-aid="AA21494" data-stat-pid="2_58_6_338"
                                             data-log_code="31pchomephone_right_0006019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.6&amp;pid=2182100050&amp;adm=5349"
                                             target="_blank" data-stat-id="AA21494+2_58_6_338">
-                                            <img src="https://i1.mifile.cn/a1/pms_1527685277.65255600!220x220.jpg"
+                                            <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1527685277.65255600!220x220.jpg"
                                                 width="160" height="160" alt="小米8 SE 6GB+64GB"> </a> </div>
-                                    <h3 class="title"><a href="details.html?sid="
-                                            data-stat-aid="AA21494" data-stat-pid="2_58_6_338"
+                                    <h3 class="title"><a href="details.html?sid=" data-stat-aid="AA21494"
+                                            data-stat-pid="2_58_6_338"
                                             data-log_code="31pchomephone_right_0006019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.6&amp;pid=2182100050&amp;adm=5349"
                                             target="_blank" data-stat-id="AA21494+2_58_6_338">小米8
                                             SE 6GB+64GB</a></h3>
@@ -892,15 +896,14 @@
                                     <div class="flag flag-saleoff"> 享8折 </div>
                                 </li>
                                 <li class="brick-item brick-item-m brick-item-m-2">
-                                    <div class="figure figure-img"> <a class="exposure"
-                                            href="details.html?sid=" data-stat-aid="AA21495"
-                                            data-stat-pid="2_58_7_339"
+                                    <div class="figure figure-img"> <a class="exposure" href="details.html?sid="
+                                            data-stat-aid="AA21495" data-stat-pid="2_58_7_339"
                                             data-log_code="31pchomephone_right_0007019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.7&amp;pid=1181500040&amp;adm=5295"
                                             target="_blank" data-stat-id="AA21495+2_58_7_339">
-                                            <img src="https://i1.mifile.cn/a1/pms_1524621350.77238418!220x220.jpg"
+                                            <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1524621350.77238418!220x220.jpg"
                                                 width="160" height="160" alt="小米6X 6GB+128GB"> </a> </div>
-                                    <h3 class="title"><a href="details.html?sid="
-                                            data-stat-aid="AA21495" data-stat-pid="2_58_7_339"
+                                    <h3 class="title"><a href="details.html?sid=" data-stat-aid="AA21495"
+                                            data-stat-pid="2_58_7_339"
                                             data-log_code="31pchomephone_right_0007019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.7&amp;pid=1181500040&amp;adm=5295"
                                             target="_blank" data-stat-id="AA21495+2_58_7_339">小米6X
                                             6GB+128GB</a></h3>
@@ -910,15 +913,14 @@
                                     <div class="flag flag-saleoff"> 享8折 </div>
                                 </li>
                                 <li class="brick-item brick-item-m brick-item-m-2">
-                                    <div class="figure figure-img"> <a class="exposure"
-                                            href="details.html?sid=" data-stat-aid="AA21098"
-                                            data-stat-pid="2_58_8_340"
+                                    <div class="figure figure-img"> <a class="exposure" href="details.html?sid="
+                                            data-stat-aid="AA21098" data-stat-pid="2_58_8_340"
                                             data-log_code="31pchomephone_right_0008019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.8&amp;pid=2182300107&amp;adm=5684"
                                             target="_blank" data-stat-id="AA21098+2_58_8_340">
-                                            <img src="https://i1.mifile.cn/a1/pms_1528719461.20891365!220x220.jpg"
+                                            <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1528719461.20891365!220x220.jpg"
                                                 width="160" height="160" alt="红米6A 2GB+16GB"> </a> </div>
-                                    <h3 class="title"><a href="details.html?sid="
-                                            data-stat-aid="AA21098" data-stat-pid="2_58_8_340"
+                                    <h3 class="title"><a href="details.html?sid=" data-stat-aid="AA21098"
+                                            data-stat-pid="2_58_8_340"
                                             data-log_code="31pchomephone_right_0008019#t=normal&amp;act=other&amp;page=home&amp;bid=3185161.8&amp;pid=2182300107&amp;adm=5684"
                                             target="_blank" data-stat-id="AA21098+2_58_8_340">红米6A
                                             2GB+16GB</a></h3>
@@ -933,12 +935,26 @@
                 </div>
             </div>
             <script src="script/js/lunbotu.js"></script>
+
+
+
+            <!-- 广告2 -->
             <div class="J_itemBox J_homeBanner home-banner-box home-banner-box-brick is-visible" data-index="2"><a
                     href="https://www.mi.com/a/h/9917.html?client_id=180100041086&amp;masid=17409.0577" target="_blank"
                     data-log_code="31pchomebanner_2001012#t=normal&amp;act=other&amp;page=home&amp;bid=3186791.1&amp;adm=6310"
                     data-stat-id="0a71fd21c7042695">
                     <img class="" alt="6.11发布会预热" width="1226"
-                        src="https://i1.mifile.cn/a4/xmad_15595260886_oDbVR.jpg"></a></div>
+                       src="https://i1.mifile.cn/a4/xmad_15595260886_oDbVR.jpg"></a></div>
+
+
+
+
+
+
+
+
+<!-- tab 内容 -->
+
             <div id="homeelec"
                 class="home-brick-box home-brick-row-2-box xm-plain-box J_itemBox J_brickBox no-comment-total is-visible loaded"
                 data-from-stat="false">
@@ -961,13 +977,13 @@
                                         class="exposure" data-stat-aid="AA21935" data-stat-pid="2_52_1_298"
                                         data-log_code="31pchomehomeelec_left001020#t=normal&amp;act=other&amp;page=home&amp;bid=3030368.1&amp;pid=2160800022&amp;adm=3959"
                                         target="_blank" data-stat-id="AA21935+2_52_1_298"><img
-                                            src="https://i1.mifile.cn/a4/xmad_15021710762698_QXnBu.jpg" alt=""></a>
+                                           src="https://i1.mifile.cn/a4/xmad_15021710762698_QXnBu.jpg" alt=""></a>
                                 </li>
                                 <li class="brick-item brick-item-m"> <a href="http://www.mi.com/roomrobot/"
                                         class="exposure" data-stat-aid="AA21712" data-stat-pid="2_52_2_341"
                                         data-log_code="31pchomehomeelec_left002020#t=normal&amp;act=other&amp;page=home&amp;bid=3030368.2&amp;pid=2163400004&amp;adm=3658"
                                         target="_blank" data-stat-id="AA21712+2_52_2_341"><img
-                                            src="https://i1.mifile.cn/a4/xmad_14967432043621_gmlxi.jpg" alt=""></a>
+                                           src="https://i1.mifile.cn/a4/xmad_14967432043621_gmlxi.jpg" alt=""></a>
                                 </li>
                             </ul>
                         </div>
@@ -980,7 +996,7 @@
                                                 data-stat-pid="2_53_1_299" target="_blank"
                                                 data-log_code="31pchomehomeelec_right_0001021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.1&amp;pid=1185100021&amp;adm=5955"
                                                 data-stat-id="AA21483+2_53_1_299"><img
-                                                    src="https://i1.mifile.cn/a4/xmad_15512365381648_yZpKS.jpg"
+                                                   src="https://i1.mifile.cn/a4/xmad_15512365381648_yZpKS.jpg"
                                                     width="150" height="150" alt="米家互联网洗烘一体机10kg"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1185100021.html"
                                                 data-stat-aid="AA21483" data-stat-pid="2_53_1_299"
@@ -1004,7 +1020,7 @@
                                                 data-stat-pid="2_53_2_300" target="_blank"
                                                 data-log_code="31pchomehomeelec_right_0002021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.2&amp;pid=1185000014&amp;adm=5921"
                                                 data-stat-id="AA21802+2_53_2_300"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1545286017.38639954!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1545286017.38639954!220x220.jpg"
                                                     width="150" height="150" alt="米家互联网空调（一级能效）"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1185000014.html"
                                                 data-stat-aid="AA21802" data-stat-pid="2_53_2_300"
@@ -1033,7 +1049,7 @@
                                                 data-log_code="31pchomehomeelec_right_0003021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.3&amp;pid=1183400003&amp;adm=5508"
                                                 data-stat-id="AA19345+2_53_3_301"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA19345+2_53_3_301&#39;, &#39;//item.mi.com/1183400003.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_0003021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.3&amp;pid=1183400003&amp;adm=5508&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a4/xmad_15350951136177_QUuVm.png"
+                                                   src="https://i1.mifile.cn/a4/xmad_15350951136177_QUuVm.png"
                                                     width="150" height="150" alt="15.6&quot;笔记本 i5 4G MX110"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1183400003.html"
                                                 data-stat-aid="AA19345" data-stat-pid="2_53_3_301"
@@ -1061,7 +1077,7 @@
                                                 data-log_code="31pchomehomeelec_right_0004021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.4&amp;pid=1181300022&amp;adm=5509"
                                                 data-stat-id="AA19344+2_53_4_302"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA19344+2_53_4_302&#39;, &#39;//item.mi.com/1181300022.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_0004021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.4&amp;pid=1181300022&amp;adm=5509&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1524636075.71677607!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1524636075.71677607!220x220.jpg"
                                                     width="150" height="150"
                                                     alt="13.3&quot;小米笔记本Air 四核i7 8G 256G MX150 银色"></a>
                                         </div>
@@ -1090,7 +1106,7 @@
                                                 data-log_code="31pchomehomeelec_right_0005021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.5&amp;pid=2164300024&amp;adm=3708"
                                                 data-stat-id="AA19689+2_53_5_303"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA19689+2_53_5_303&#39;, &#39;https://www.mi.com/airpro/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_0005021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.5&amp;pid=2164300024&amp;adm=3708&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a4/xmad_14972549116226_tZpod.png"
+                                                   src="https://i1.mifile.cn/a4/xmad_14972549116226_tZpod.png"
                                                     width="150" height="150" alt="米家空气净化器Pro"></a> </div>
                                         <h3 class="title"> <a href="https://www.mi.com/airpro/" data-stat-aid="AA19689"
                                                 data-stat-pid="2_53_5_303"
@@ -1117,7 +1133,7 @@
                                                 data-log_code="31pchomehomeelec_right_0006021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.6&amp;pid=2173100001&amp;adm=4091"
                                                 data-stat-id="AA19829+2_53_6_304"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA19829+2_53_6_304&#39;, &#39;//item.mi.com/1173100005.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_0006021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.6&amp;pid=2173100001&amp;adm=4091&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1504498936.11861982!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1504498936.11861982!220x220.jpg"
                                                     width="150" height="150" alt="米家电水壶"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1173100005.html"
                                                 data-stat-aid="AA19829" data-stat-pid="2_53_6_304"
@@ -1144,7 +1160,7 @@
                                                 data-log_code="31pchomehomeelec_right_0007021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.7&amp;pid=2181800006&amp;adm=5231"
                                                 data-stat-id="AA19588+2_53_7_305"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA19588+2_53_7_305&#39;, &#39;//item.mi.com/1181800008.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_0007021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.7&amp;pid=2181800006&amp;adm=5231&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a4/xmad_15281923207128_rOfDp.png"
+                                                   src="https://i1.mifile.cn/a4/xmad_15281923207128_rOfDp.png"
                                                     width="150" height="150" alt="米家LED吸顶灯"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1181800008.html"
                                                 data-stat-aid="AA19588" data-stat-pid="2_53_7_305"
@@ -1170,7 +1186,7 @@
                                                 data-log_code="31pchomehomeelec_right_0008021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.8&amp;pid=2160800022&amp;adm=3941"
                                                 target="_blank" data-stat-id="AA17492+2_53_8_306"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA17492+2_53_8_306&#39;, &#39;//item.mi.com/1160800067.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_0008021#t=normal&amp;act=other&amp;page=home&amp;bid=3030369.8&amp;pid=2160800022&amp;adm=3941&#39;]);">
-                                                <img src="https://i1.mifile.cn/a1/pms_1521634907.16181074!220x220.jpg"
+                                                <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1521634907.16181074!220x220.jpg"
                                                     width="80" height="80" alt="小米净水器（厨下式）"> </a> </div>
                                         <h3 class="title"><a href="https://item.mi.com/1160800067.html" class="exposure"
                                                 data-stat-aid="AA17492" data-stat-pid="2_53_8_306"
@@ -1199,7 +1215,7 @@
                                                 data-log_code="31pchomehomeelec_right_1001022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.1&amp;pid=1191600048&amp;adm=6161"
                                                 data-stat-id="AA21748+2_54_1_307"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA21748+2_54_1_307&#39;, &#39;https://item.mi.com/1191600048.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_1001022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.1&amp;pid=1191600048&amp;adm=6161&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1555935546.09711490!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1555935546.09711490!220x220.jpg"
                                                     width="150" height="150" alt="小米壁画电视 65英寸"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1191600048.html"
                                                 data-stat-aid="AA21748" data-stat-pid="2_54_1_307"
@@ -1227,7 +1243,7 @@
                                                 data-log_code="31pchomehomeelec_right_1002022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.2&amp;pid=1191600030&amp;adm=6162"
                                                 data-stat-id="AA21749+2_54_2_308"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA21749+2_54_2_308&#39;, &#39;https://item.mi.com/1191600030.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_1002022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.2&amp;pid=1191600030&amp;adm=6162&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1555935546.09711490!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1555935546.09711490!220x220.jpg"
                                                     width="150" height="150" alt="小米全面屏电视E55A"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1191600030.html"
                                                 data-stat-aid="AA21749" data-stat-pid="2_54_2_308"
@@ -1256,7 +1272,7 @@
                                                 data-log_code="31pchomehomeelec_right_1003022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.3&amp;pid=1172700040&amp;adm=4613"
                                                 data-stat-id="AA19187+2_54_3_309"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA19187+2_54_3_309&#39;, &#39;//item.mi.com/1172700040.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_1003022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.3&amp;pid=1172700040&amp;adm=4613&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
                                                     width="150" height="150" alt="小米电视4A 32英寸"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1172700040.html"
                                                 data-stat-aid="AA19187" data-stat-pid="2_54_3_309"
@@ -1285,7 +1301,7 @@
                                                 data-log_code="31pchomehomeelec_right_1004022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.4&amp;pid=2181100015&amp;adm=5261"
                                                 data-stat-id="AA21166+2_54_4_310"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA21166+2_54_4_310&#39;, &#39;//item.mi.com/1181100012.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_1004022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.4&amp;pid=2181100015&amp;adm=5261&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
                                                     width="150" height="150" alt="小米电视4C 50英寸"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1181100012.html"
                                                 data-stat-aid="AA21166" data-stat-pid="2_54_4_310"
@@ -1310,7 +1326,7 @@
                                                 data-log_code="31pchomehomeelec_right_1005022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.5&amp;pid=2184100005&amp;adm=5619"
                                                 data-stat-id="AA21752+2_54_5_311"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA21752+2_54_5_311&#39;, &#39;//item.mi.com/1184100005.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_1005022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.5&amp;pid=2184100005&amp;adm=5619&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
                                                     width="150" height="150" alt="小米电视4X 43英寸"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1184100005.html"
                                                 data-stat-aid="AA21752" data-stat-pid="2_54_5_311"
@@ -1339,7 +1355,7 @@
                                                 data-log_code="31pchomehomeelec_right_1006022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.6&amp;pid=1170900026&amp;adm=6163"
                                                 data-stat-id="AA21750+2_54_6_312"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA21750+2_54_6_312&#39;, &#39;https://item.mi.com/1170900026.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_1006022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.6&amp;pid=1170900026&amp;adm=6163&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
                                                     width="150" height="150" alt="小米电视4A 65英寸"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1170900026.html"
                                                 data-stat-aid="AA21750" data-stat-pid="2_54_6_312"
@@ -1368,7 +1384,7 @@
                                                 data-log_code="31pchomehomeelec_right_1007022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.7&amp;pid=2180100010&amp;adm=5956"
                                                 data-stat-id="AA21484+2_54_7_313"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA21484+2_54_7_313&#39;, &#39;https://item.mi.com/1180100010.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_1007022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.7&amp;pid=2180100010&amp;adm=5956&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
                                                     width="150" height="150" alt="小米盒子4"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1180100010.html"
                                                 data-stat-aid="AA21484" data-stat-pid="2_54_7_313"
@@ -1394,7 +1410,7 @@
                                                 data-log_code="31pchomehomeelec_right_1008022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.8&amp;pid=2180100009&amp;adm=5957"
                                                 target="_blank" data-stat-id="AA21485+2_54_8_314"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA21485+2_54_8_314&#39;, &#39;https://item.mi.com/1180100009.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_1008022#t=normal&amp;act=other&amp;page=home&amp;bid=3030370.8&amp;pid=2180100009&amp;adm=5957&#39;]);">
-                                                <img src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
+                                                <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
                                                     width="80" height="80" alt="小米盒子4c"> </a> </div>
                                         <h3 class="title"><a href="https://item.mi.com/1180100009.html" class="exposure"
                                                 data-stat-aid="AA21485" data-stat-pid="2_54_8_314"
@@ -1422,7 +1438,7 @@
                                                 data-log_code="31pchomehomeelec_right_2001023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.1&amp;pid=1183100042&amp;adm=5510"
                                                 data-stat-id="AA19346+2_55_1_315"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA19346+2_55_1_315&#39;, &#39;//item.mi.com/1183100042.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_2001023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.1&amp;pid=1183100042&amp;adm=5510&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
                                                     width="150" height="150" alt="15.6 Pro i5 8G 1050MAX-Q 256G"></a>
                                         </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1183100042.html"
@@ -1450,7 +1466,7 @@
                                                 data-log_code="31pchomehomeelec_right_2002023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.2&amp;pid=1174900021&amp;adm=5513"
                                                 data-stat-id="AA17348+2_55_2_316"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA17348+2_55_2_316&#39;, &#39;//item.mi.com/1174900021.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_2002023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.2&amp;pid=1174900021&amp;adm=5513&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1555947485.70419235!220x220.jpg"
                                                     width="150" height="150"
                                                     alt="13.3&quot;小米笔记本Air 四核i7 8G 256G MX150 深空灰"></a>
                                         </div>
@@ -1479,7 +1495,7 @@
                                                 data-log_code="31pchomehomeelec_right_2003023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.3&amp;pid=1183000012&amp;adm=5512"
                                                 data-stat-id="AA17349+2_55_3_317"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA17349+2_55_3_317&#39;, &#39;//item.mi.com/1183000012.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_2003023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.3&amp;pid=1183000012&amp;adm=5512&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1490595812.95661863!220x220.png"
+                                                   src="https://i1.mifile.cn/a1/pms_1490595812.95661863!220x220.png"
                                                     width="150" height="150"
                                                     alt="小米游戏本15.6”8代i7 16G 1T+256G 1060 6G"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1183000012.html"
@@ -1509,7 +1525,7 @@
                                                 data-log_code="31pchomehomeelec_right_2004023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.4&amp;pid=1181300022&amp;adm=5509"
                                                 data-stat-id="AA17350+2_55_4_318"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA17350+2_55_4_318&#39;, &#39;//item.mi.com/1181300022.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_2004023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.4&amp;pid=1181300022&amp;adm=5509&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1478248566.62624407!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1478248566.62624407!220x220.jpg"
                                                     width="150" height="150"
                                                     alt="13.3&quot;小米笔记本Air 四核i7 8G 256G MX150 银色"></a>
                                         </div>
@@ -1538,7 +1554,7 @@
                                                 data-log_code="31pchomehomeelec_right_2005023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.5&amp;pid=2171100009&amp;adm=3470"
                                                 data-stat-id="AA15922+2_55_5_319"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA15922+2_55_5_319&#39;, &#39;http://www.mi.com/mouse-2/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_2005023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.5&amp;pid=2171100009&amp;adm=3470&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1490702347.3628109!220x220.png"
+                                                   src="https://i1.mifile.cn/a1/pms_1490702347.3628109!220x220.png"
                                                     width="150" height="150" alt="小米无线鼠标"></a> </div>
                                         <h3 class="title"> <a href="http://www.mi.com/mouse-2/" data-stat-aid="AA15922"
                                                 data-stat-pid="2_55_5_319"
@@ -1565,7 +1581,7 @@
                                                 data-log_code="31pchomehomeelec_right_2006023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.6&amp;pid=2164100007&amp;adm=3466"
                                                 data-stat-id="AA15923+2_55_6_320"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA15923+2_55_6_320&#39;, &#39;http://www.mi.com/mouse/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_2006023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.6&amp;pid=2164100007&amp;adm=3466&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1490702347.3628109!220x220.png"
+                                                   src="https://i1.mifile.cn/a1/pms_1490702347.3628109!220x220.png"
                                                     width="150" height="150" alt="小米便携鼠标"></a> </div>
                                         <h3 class="title"> <a href="http://www.mi.com/mouse/" data-stat-aid="AA15923"
                                                 data-stat-pid="2_55_6_320"
@@ -1592,7 +1608,7 @@
                                                 data-log_code="31pchomehomeelec_right_2007023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.7&amp;pid=2171300013&amp;adm=3465"
                                                 data-stat-id="AA15909+2_55_7_321"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA15909+2_55_7_321&#39;, &#39;http://www.mi.com/keyboard/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_2007023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.7&amp;pid=2171300013&amp;adm=3465&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1490702347.3628109!220x220.png"
+                                                   src="https://i1.mifile.cn/a1/pms_1490702347.3628109!220x220.png"
                                                     width="150" height="150" alt="悦米机械键盘"></a> </div>
                                         <h3 class="title"> <a href="http://www.mi.com/keyboard/" data-stat-aid="AA15909"
                                                 data-stat-pid="2_55_7_321"
@@ -1618,7 +1634,7 @@
                                                 data-log_code="31pchomehomeelec_right_2008023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.8&amp;pid=2163000004&amp;adm=3464"
                                                 target="_blank" data-stat-id="AA15907+2_55_8_322"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA15907+2_55_8_322&#39;, &#39;//item.mi.com/1163000011.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_2008023#t=normal&amp;act=other&amp;page=home&amp;bid=3030371.8&amp;pid=2163000004&amp;adm=3464&#39;]);">
-                                                <img src="https://i1.mifile.cn/a1/pms_1469523170.25518983!220x220.jpg"
+                                                <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1469523170.25518983!220x220.jpg"
                                                     width="80" height="80" alt="多功能转接器"> </a> </div>
                                         <h3 class="title"><a href="https://item.mi.com/1163000011.html" class="exposure"
                                                 data-stat-aid="AA15907" data-stat-pid="2_55_8_322"
@@ -1646,7 +1662,7 @@
                                                 data-log_code="31pchomehomeelec_right_3001024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.1&amp;pid=2161400001&amp;adm=1959"
                                                 data-stat-id="AA17561+2_56_1_323"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA17561+2_56_1_323&#39;, &#39;http://www.mi.com/kettle/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_3001024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.1&amp;pid=2161400001&amp;adm=1959&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1465366178.11466342!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1465366178.11466342!220x220.jpg"
                                                     width="150" height="150" alt="米家恒温电水壶"></a> </div>
                                         <h3 class="title"> <a href="http://www.mi.com/kettle/" data-stat-aid="AA17561"
                                                 data-stat-pid="2_56_1_323"
@@ -1673,7 +1689,7 @@
                                                 data-log_code="31pchomehomeelec_right_3002024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.2&amp;pid=2172800014&amp;adm=4450"
                                                 data-stat-id="AA18874+2_56_2_324"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA18874+2_56_2_324&#39;, &#39;http://www.mi.com/flashlight/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_3002024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.2&amp;pid=2172800014&amp;adm=4450&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1506417289.23728408!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1506417289.23728408!220x220.jpg"
                                                     width="150" height="150" alt="小米随身手电筒"></a> </div>
                                         <h3 class="title"> <a href="http://www.mi.com/flashlight/"
                                                 data-stat-aid="AA18874" data-stat-pid="2_56_2_324"
@@ -1701,7 +1717,7 @@
                                                 data-log_code="31pchomehomeelec_right_3003024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.3&amp;pid=2163400004&amp;adm=2428"
                                                 data-stat-id="AA18721+2_56_3_325"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA18721+2_56_3_325&#39;, &#39;http://www.mi.com/roomrobot/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_3003024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.3&amp;pid=2163400004&amp;adm=2428&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1472609961.95298675!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1472609961.95298675!220x220.jpg"
                                                     width="150" height="150" alt="米家扫地机器人"></a> </div>
                                         <h3 class="title"> <a href="http://www.mi.com/roomrobot/"
                                                 data-stat-aid="AA18721" data-stat-pid="2_56_3_325"
@@ -1728,7 +1744,7 @@
                                                 data-log_code="31pchomehomeelec_right_3004024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.4&amp;pid=2174400013&amp;adm=4697"
                                                 data-stat-id="AA20746+2_56_4_326"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA20746+2_56_4_326&#39;, &#39;https://www.mi.com/air2s/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_3004024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.4&amp;pid=2174400013&amp;adm=4697&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1472609961.95298675!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1472609961.95298675!220x220.jpg"
                                                     width="150" height="150" alt="小米米家空气净化器 2S"></a> </div>
                                         <h3 class="title"> <a href="https://www.mi.com/air2s/" data-stat-aid="AA20746"
                                                 data-stat-pid="2_56_4_326"
@@ -1755,7 +1771,7 @@
                                                 data-log_code="31pchomehomeelec_right_3005024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.5&amp;pid=2161200066&amp;adm=1819"
                                                 data-stat-id="AA17545+2_56_5_327"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA17545+2_56_5_327&#39;, &#39;http://www.mi.com/dianfanbao/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_3005024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.5&amp;pid=2161200066&amp;adm=1819&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1496647119.81414190!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1496647119.81414190!220x220.jpg"
                                                     width="150" height="150" alt="米家压力IH电饭煲"></a> </div>
                                         <h3 class="title"> <a href="http://www.mi.com/dianfanbao/"
                                                 data-stat-aid="AA17545" data-stat-pid="2_56_5_327"
@@ -1782,7 +1798,7 @@
                                                 data-log_code="31pchomehomeelec_right_3006024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.6&amp;pid=2172100015&amp;adm=3655"
                                                 data-stat-id="AA16361+2_56_6_328"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA16361+2_56_6_328&#39;, &#39;//item.mi.com/1172100033.html&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_3006024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.6&amp;pid=2172100015&amp;adm=3655&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1496647119.81414190!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1496647119.81414190!220x220.jpg"
                                                     width="150" height="150" alt="飞利浦智睿球泡灯"></a> </div>
                                         <h3 class="title"> <a href="https://item.mi.com/1172100033.html"
                                                 data-stat-aid="AA16361" data-stat-pid="2_56_6_328"
@@ -1809,7 +1825,7 @@
                                                 data-log_code="31pchomehomeelec_right_3007024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.7&amp;pid=2172100004&amp;adm=1971"
                                                 data-stat-id="AA16393+2_56_7_329"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA16393+2_56_7_329&#39;, &#39;http://www.mi.com/mjsmartlamp/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_3007024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.7&amp;pid=2172100004&amp;adm=1971&#39;]);"><img
-                                                    src="https://i1.mifile.cn/a1/pms_1496647119.81414190!220x220.jpg"
+                                                   src="https://i1.mifile.cn/a1/pms_1496647119.81414190!220x220.jpg"
                                                     width="150" height="150" alt="米家 LED 智能台灯"></a> </div>
                                         <h3 class="title"> <a href="http://www.mi.com/mjsmartlamp/"
                                                 data-stat-aid="AA16393" data-stat-pid="2_56_7_329"
@@ -1836,7 +1852,7 @@
                                                 data-log_code="31pchomehomeelec_right_3008024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.8&amp;pid=2171200006&amp;adm=3295"
                                                 target="_blank" data-stat-id="AA16424+2_56_8_330"
                                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-AA16424+2_56_8_330&#39;, &#39;http://www.mi.com/yeelight-ceilinglamp/&#39;, &#39;pcpid&#39;, &#39;31pchomehomeelec_right_3008024#t=normal&amp;act=other&amp;page=home&amp;bid=3030372.8&amp;pid=2171200006&amp;adm=3295&#39;]);">
-                                                <img src="https://i1.mifile.cn/a1/pms_1490756071.3088664!220x220.png"
+                                                <img class="lazy" data-original="https://i1.mifile.cn/a1/pms_1490756071.3088664!220x220.png"
                                                     width="80" height="80" alt="Yeelight LED 吸顶灯"> </a> </div>
                                         <h3 class="title"><a href="http://www.mi.com/yeelight-ceilinglamp/"
                                                 class="exposure" data-stat-aid="AA16424" data-stat-pid="2_56_8_330"
@@ -1862,15 +1878,20 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <!-- 广告3 -->
             <div class="J_itemBox J_homeBanner home-banner-box home-banner-box-brick is-visible" data-index="3"><a
                     href="https://www.mi.com/a/h/9819.html" target="_blank"
                     data-log_code="31pchomebanner_3001013#t=normal&amp;act=other&amp;page=home&amp;bid=3186792.1&amp;adm=6330"
                     data-stat-id="5d863efd3dda20a0"
                     onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-5d863efd3dda20a0&#39;, &#39;https://www.mi.com/a/h/9819.html&#39;, &#39;pcpid&#39;, &#39;31pchomebanner_3001013#t=normal&amp;act=other&amp;page=home&amp;bid=3186792.1&amp;adm=6330&#39;]);">
                     <img class="" alt="电视6.8" width="1226"
-                        src="https://i1.mifile.cn/a4/xmad_15598109204013_VDBkz.jpg"></a></div>
+                       src="https://i1.mifile.cn/a4/xmad_15598109204013_VDBkz.jpg"></a></div>
 
         </div>
+
         <script src="script/js/con2.js"></script>
 
 
@@ -1883,14 +1904,14 @@
                                 data-log_code="3343648" data-stat-id="a2da08d794d3c499"
                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-a2da08d794d3c499&#39;, &#39;javascript:&#39;, &#39;pcpid&#39;, &#39;3343648&#39;]);">
                                 <div class="bar-img"> <img class="original-img"
-                                        src="https://i8.mifile.cn/b2c-mimall-media/98a23aae70f25798192693f21c4d4039.png">
+                                       src="https://i8.mifile.cn/b2c-mimall-media/98a23aae70f25798192693f21c4d4039.png">
                                     <img class="hover-img"
-                                        src="https://i8.mifile.cn/b2c-mimall-media/74c4fcb4475af8308e9a670db9c01fdf.png">
+                                       src="https://i8.mifile.cn/b2c-mimall-media/74c4fcb4475af8308e9a670db9c01fdf.png">
                                 </div>
                                 <p class="bar-text">手机APP</p>
                                 <div class="bar-pop">
                                     <div class="bar-pop-content"> <img
-                                            src="https://i8.mifile.cn/b2c-mimall-media/93650133310ec1c385487417a472a26c.png"
+                                           src="https://i8.mifile.cn/b2c-mimall-media/93650133310ec1c385487417a472a26c.png"
                                             class="bar-pop-qr">
                                         <p class="bar-pop-text">手机扫一扫一分赢好礼</p>
                                     </div>
@@ -1901,9 +1922,9 @@
                                 data-log_code="3213221" data-stat-id="fe1ad802afe4ac56"
                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-fe1ad802afe4ac56&#39;, &#39;https://order.mi.com/portal&#39;, &#39;pcpid&#39;, &#39;3213221&#39;]);">
                                 <div class="bar-img"> <img class="original-img"
-                                        src="https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png">
+                                       src="https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png">
                                     <img class="hover-img"
-                                        src="https://i8.mifile.cn/b2c-mimall-media/41f858550f42eb1770b97faf219ae215.png">
+                                       src="https://i8.mifile.cn/b2c-mimall-media/41f858550f42eb1770b97faf219ae215.png">
                                 </div>
                                 <p class="bar-text">个人中心</p>
                             </a> </li>
@@ -1911,9 +1932,9 @@
                                 data-log_code="3213225" data-stat-id="aefd4695f803b76d"
                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-aefd4695f803b76d&#39;, &#39;https://service.order.mi.com/apply/front&#39;, &#39;pcpid&#39;, &#39;3213225&#39;]);">
                                 <div class="bar-img"> <img class="original-img"
-                                        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12eb0965ab33dc8e05870911b90f3f13.png">
+                                       src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12eb0965ab33dc8e05870911b90f3f13.png">
                                     <img class="hover-img"
-                                        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/95fbf0081a06eec7be4d35e277faeca0.png">
+                                       src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/95fbf0081a06eec7be4d35e277faeca0.png">
                                 </div>
                                 <p class="bar-text">售后服务</p>
                             </a> </li>
@@ -1921,9 +1942,9 @@
                                 data-log_code="3213222" data-stat-id="fa7be39a3950e951"
                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-fa7be39a3950e951&#39;, &#39;https://support.kefu.mi.com/&#39;, &#39;pcpid&#39;, &#39;3213222&#39;]);">
                                 <div class="bar-img"> <img class="original-img"
-                                        src="https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png">
+                                       src="https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png">
                                     <img class="hover-img"
-                                        src="https://i8.mifile.cn/b2c-mimall-media/5e9f2b1b0da09ac3b3961378284ef2d4.png">
+                                       src="https://i8.mifile.cn/b2c-mimall-media/5e9f2b1b0da09ac3b3961378284ef2d4.png">
                                 </div>
                                 <p class="bar-text">联系客服</p>
                             </a> </li>
@@ -1931,9 +1952,9 @@
                                 data-log_code="3213223" data-stat-id="3e0522504d1e0216"
                                 onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-3e0522504d1e0216&#39;, &#39;https://static.mi.com/cart/&#39;, &#39;pcpid&#39;, &#39;3213223&#39;]);">
                                 <div class="bar-img"> <img class="original-img"
-                                        src="https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png">
+                                       src="https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png">
                                     <img class="hover-img"
-                                        src="https://i8.mifile.cn/b2c-mimall-media/692a6c3b0a93a24f74a29c0f9d68ec71.png">
+                                       src="https://i8.mifile.cn/b2c-mimall-media/692a6c3b0a93a24f74a29c0f9d68ec71.png">
                                     <span class="bar-car hidden J_barLMum J_homeRightbarCarNum">0</span> </div>
                                 <p class="bar-text">购物车</p>
                                 <div class="pop"></div>
@@ -2290,26 +2311,26 @@
                         href="https://privacy.truste.com/privacy-seal/validation?rid=4fc28a8c-6822-4980-9c4b-9fdc69b94eb8&amp;lang=zh-cn"
                         target="_blank" data-stat-id="d79bd36766f023f0"
                         onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-d79bd36766f023f0&#39;, &#39;https://privacy.truste.com/privacy-seal/validationrid=4fc28a8c-6822-4980-9c4b-9fdc69b94eb8&amp;lang=zh-cn&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                            rel="nofollow" src="https://i1.mifile.cn/f/i/17/site/truste.png"
+                            rel="nofollow"src="https://i1.mifile.cn/f/i/17/site/truste.png"
                             alt="TRUSTe Privacy Certification"></a>
                     <a rel="nofollow" href="https://search.szfw.org/cert/l/CX20120926001783002010" target="_blank"
                         data-stat-id="f0877449bc91038d"
                         onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-f0877449bc91038d&#39;, &#39;https://search.szfw.org/cert/l/CX20120926001783002010&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                            rel="nofollow" src="https://s01.mifile.cn/i/v-logo-1.png" alt="诚信网站"></a>
+                            rel="nofollow"src="https://s01.mifile.cn/i/v-logo-1.png" alt="诚信网站"></a>
                     <a rel="nofollow"
                         href="https://ss.knet.cn/verifyseal.dll?sn=e12033011010015771301369&amp;ct=df&amp;pa=461082"
                         target="_blank" data-stat-id="2173f8773b3dc666"
                         onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-2173f8773b3dc666&#39;, &#39;https://ss.knet.cn/verifyseal.dllsn=e12033011010015771301369&amp;ct=df&amp;pa=461082&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                            rel="nofollow" src="https://s01.mifile.cn/i/v-logo-2.png" alt="可信网站"></a>
+                            rel="nofollow"src="https://s01.mifile.cn/i/v-logo-2.png" alt="可信网站"></a>
                     <a rel="nofollow" href="http://www.315online.com.cn/member/315140007.html" target="_blank"
                         data-stat-id="d2aa5eabb354499e"
                         onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-d2aa5eabb354499e&#39;, &#39;http://www.315online.com.cn/member/315140007.html&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                            rel="nofollow" src="https://s01.mifile.cn/i/v-logo-3.png" alt="网上交易保障中心"></a>
+                            rel="nofollow"src="https://s01.mifile.cn/i/v-logo-3.png" alt="网上交易保障中心"></a>
                     <a rel="nofollow" href="https://www.mi.com/service/buy/commitment/" target="_blank"
                         data-stat-id="075070cd3386be85"
                         onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-075070cd3386be85&#39;, &#39;https://www.mi.com/service/buy/commitment/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
                             rel="nofollow"
-                            src="https://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png"
+                           src="https://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png"
                             alt="诚信经营 放心消费"></a>
                 </div>
             </div>
@@ -2321,7 +2342,7 @@
                 <span class="title">小米手机官方微信二维码</span>
             </div>
             <div class="modal-bd">
-                <img alt="" src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" width="680" height="340">
+                <img alt=""src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" width="680" height="340">
             </div>
         </div>
     </div>
@@ -2329,6 +2350,8 @@
 
 
     <script src='script/js/index.js'></script>
+    <script src="script/js/jquery.lazyload.js"></script>
+    <script type="text/javascript" charset="utf-8" src="script/js/mylazyload.js"></script>
 </body>
 
 </html>

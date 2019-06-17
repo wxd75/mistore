@@ -37,6 +37,7 @@
 
 <body>
     <script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <script src="script/js/jquery.cookie.js"></script>
     <div class="site-topbar">
         <div class="container">
             <div class="topbar-nav">
@@ -73,7 +74,7 @@
                     Region</a>
             </div>
             <div class="topbar-cart" id="J_miniCartTrigger">
-                <a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="https://static.mi.com/cart/"
+                <a rel="nofollow" class="cart-mini" id="J_miniCartBtn" href="cart.html"
                     data-stat-id="993329c4d3756bcd"><i class="iconfont"></i>购物车<span
                         class="cart-mini-num J_cartNum">（0）</span></a>
                 <div class="cart-menu" id="J_miniCartMenu">
@@ -83,14 +84,17 @@
                 </div>
             </div>
             <div class="topbar-info" id="J_userInfo">
-                <a rel="nofollow" class="link" href="javascript:void(0);" data-agreement="true" data-login="true"
-                    data-href="//order.mi.com/site/login?redirectUrl=https://www.mi.com/"
-                    data-stat-id="2f616d176624bee4">登录</a><span class="sep">|</span><a rel="nofollow" class="link"
-                    href="javascript:void(0);" data-agreement="true" data-register="true"
-                    data-href="https://account.xiaomi.com/pass/register" data-stat-id="14045e83c802f684">注册</a>
-                <span class="sep">|</span><span class="message"><a rel="nofollow"
-                        data-href="//order.mi.com/message/list" class="J_needAgreement" data-login="true"
-                        data-stat-id="4d1a64ff80623660">消息通知<i class="J_miMessageTotal"></i></a></span></div>
+                    <a rel="nofollow" class="link" href="login.html" data-agreement="true" data-login="true"
+                        data-href="//order.mi.com/site/login?redirectUrl=https://www.mi.com/"
+                        data-stat-id="2f616d176624bee4">登录</a><span class="sep">|</span><a rel="nofollow" class="link"
+                        href="registor.html" data-agreement="true" data-register="true"
+                        data-href="https://account.xiaomi.com/pass/register" data-stat-id="14045e83c802f684">注册</a>
+                        <a rel="nofollow" class="loginture" style="display:none;"><span class="username"></span>欢迎您！</a>
+                        <a rel="nofollow" class="exit" style="display:none;">退出</a>
+                    <span class="sep">|</span><span class="message"><a rel="nofollow"
+                            data-href="//order.mi.com/message/list" class="J_needAgreement" data-login="true"
+                            data-stat-id="4d1a64ff80623660">消息通知<i class="J_miMessageTotal"></i></a></span>
+                </div>
         </div>
     </div>
 
@@ -99,7 +103,7 @@
         <div class="container">
             <div class="header-logo">
                 <a class='iconfont icon-xiaomi' style='background:#ff6700;display: block;height: 55px;width:55px;text-align:center;line-height: 55px;
-                    font-size: 25px;color:#fff;cursor: pointer;' href='http://10.31.164.49/mistore/src/index.html'></a>
+                    font-size: 25px;color:#fff;cursor: pointer;' href='index.html'></a>
             </div>
             <div class="header-nav">
                 <ul class="nav-list J_navMainList clearfix">
@@ -1003,7 +1007,7 @@
     </div> -->
     <script src='script/js/fangdajing.js'></script>
 
-    <!-- 底部 -->
+    <!-- 底部  -->
 
     <div class="site-footer" style="border-top:1px solid #ccc ">
         <div class="container">

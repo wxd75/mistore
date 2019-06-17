@@ -8,7 +8,7 @@
     // let imm = $('.brick-item-m-2');
     // console.log(title,img,desc,price,pricelater);
     $.ajax({
-        url: 'http://10.31.164.49/mistore/php/lunbotu.php',
+        url: 'http://localhost/mistore/php/lunbotu.php',
         success: function (d) {
             // var telobj = eval('(' + d + ')');
             // console.log(telobj);

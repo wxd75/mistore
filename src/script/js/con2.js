@@ -12,7 +12,7 @@
         let fromm = $('.look .brick-item .review-wrapper a .author');
         // let imm = $('.look .brick-item');
         $.ajax({
-            url: 'http://10.31.164.49/mistore/php/con2.php',
+            url: 'http://localhost/mistore/php/con2.php',
             success: function (d) {
                 let a = JSON.parse(d);
                 console.log(price.children());

@@ -1,3 +1,17 @@
+function xmsearch(e){
+    let ul = document.querySelector('#J_keywordList');
+    let li = document.querySelectorAll('#J_keywordList li');
+    for (let i = 0; i < li.length; i++) {
+        ul.removeChild(li[i]);
+    }
+    console.log(e);
+    for (let i = 0; i < e.length; i++) {
+        let li = document.createElement('li');
+        li.innerHTML = `${e[i].Key}`;
+        $('#J_keywordList').append(li);
+    }
+}
+
 class jianbian {
     constructor() {
         this.Div = $('.ui-wrapper');
@@ -171,8 +185,11 @@ class sousuo {
     }
 
     sou() {
+       
         let that = this;
         // console.log(1);
+        
+        
 
         this.kuang.on('input', function () {
             that.get();
@@ -194,27 +211,24 @@ class sousuo {
     }
 
     get() {
-        let cs = document.createElement('script');
-        cs.src = 'https://search.mi.com/search/expand?keyword=' + this.kuang.val() + '&jsonpcallback=xmsearch';
-        document.body.appendChild(cs);
+        // let that = this;
+        $.ajax({
+            url: 'https://search.mi.com/search/expand?keyword=' + this.kuang.val() + '&jsonpcallback=xmsearch',
+            dataType: 'jsonp',
+            success:function(d){
+                
+            }
+        })
     }
+    
+    
+
 
 
 }
 new sousuo().sou();
-function xmsearch(data) {
-    let ul = document.querySelector('#J_keywordList');
-    let li = document.querySelectorAll('#J_keywordList li');
-    for (let i = 0; i < li.length; i++) {
-        ul.removeChild(li[i]);
-    }
-    console.log(data);
-    for (let i = 0; i < data.length; i++) {
-        let li = document.createElement('li');
-        li.innerHTML = `${data[i].Key}`;
-        $('#J_keywordList').append(li);
-    }
-}
+
+
 
 //taobao({"result":[]})
 
@@ -227,12 +241,50 @@ class zhuan {
 
     tiao() {
         // let that = this;
-        for (let i = 0; i < this.a.length/2; i++) {
-            this.a[2*i].href += i+1;
-            this.a[2*i+1].href += i+1;
+        for (let i = 0; i < this.a.length / 2; i++) {
+            this.a[2 * i].href += i + 1;
+            this.a[2 * i + 1].href += i + 1;
         }
 
-        
+
     }
 }
 new zhuan().tiao()
+
+
+class turelogin {
+    constructor() {
+        this.hidea = $('.topbar-info .link');
+        this.hidespan = $('.topbar-info .sep');
+        this.show = $('.topbar-info .loginture');
+        this.message = $('.topbar-info .message');
+        this.exit = $('.topbar-info .exit');
+    }
+
+    fuk() {
+        // alert(getCookie('UserName'));
+        let that = this;
+        if ($.cookie('UserName')) {    // 判断有没有UserName 的cookie
+            this.hidea.hide();
+            this.hidespan.hide();
+            this.show.show();
+            this.message.css('float', 'inherit');
+            this.show.children('.username').html($.cookie('UserName'));
+            this.exit.show();
+        }
+
+        this.exit.on('click', function () {
+            that.exiti();
+        })
+    }
+
+    exiti() {
+        // let baga = $.cookie('UserName');
+        $.cookie('UserName', '', { expires: -1 });  //删除
+        history.go(0);
+    }
+
+
+}
+
+new turelogin().fuk()

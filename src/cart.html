@@ -27,25 +27,178 @@
         type="application/opensearchdescription+xml">
     <meta http-equiv="Cache-Control" content="no-transform ">
     <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="stylesheet" type="text/css" href="//s01.mifile.cn/css/cart.min.css?63f401">
     <link rel="stylesheet" href="css/base.min.css">
     <link rel="stylesheet" href="css/index.min.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 
 <body>
+    <script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <script src="script/js/jquery.cookie.js"></script>
     <div class="site-header site-mini-header">
         <div class="container">
             <div class="header-logo">
-                <a class="logo ir" href="//www.mi.com/index.html" title="小米官网">小米官网</a>
+                <a class='iconfont icon-xiaomi' style='background:#ff6700;display: block;height: 55px;width:55px;text-align:center;line-height: 55px;
+                    font-size: 25px;color:#fff;cursor: pointer;' href='index.html'></a>
             </div>
-            <div class="header-title" id="J_miniHeaderTitle"></div>
-            <div class="topbar-info" id="J_userInfo">
-                <a class="link" href="//order.mi.com/site/login" data-agreement="true" data-login="true">登录</a><span
-                    class="sep">|</span><a class="link" href="https://account.xiaomi.com/pass/register"
-                    data-agreement="true" data-register="true">注册</a> </div>
+            <div class="header-title" id="J_miniHeaderTitle">
+                <h2>我的购物车</h2>
+            </div>
+
+            <!-- 1 -->
+            <div class="topbar-info" id="J_userInfo1">
+                <a class="link" href="login.html" data-agreement="true" data-login="true">
+                    登录
+                </a>
+                <span class="sep">|</span>
+                <a class="link" href="registor.html" data-agreement="true" data-register="true">
+                    注册
+                </a>
+            </div>
+            <!-- 2 -->
+            <div class="topbar-info" id="J_userInfo2">
+                <span class="user">
+                    <a rel="nofollow" class="user-name" href="#" target="_blank">
+                        <span class="name">2153254962</span>
+                        <i class="iconfont"></i>
+                    </a>
+                </span>
+                <span class="sep">|</span>
+                <a rel="nofollow" class="link link-order" href="#" target="_blank">我的订单</a>
+            </div>
         </div>
     </div>
-    
-    <div class="site-footer">
+
+
+    <!-- 内容 -->
+    <div class="page-main">
+
+        <div class="container">
+
+            <!-- 懒加载 -->
+            <div class="cart-loading loading hide" id="J_cartLoading">
+                <div class="loader"></div>
+            </div>
+            <!-- 空 -->
+            <div class="cart-empty cart-empty-nologin" id="J_cartEmpty">
+                <h2>您的购物车还是空的！</h2>
+                <a href="//list.mi.com/0" class="btn btn-primary btn-shoping J_goShoping">马上去购物</a>
+            </div>
+
+            <!-- 主体 -->
+            <div id="J_cartBox" class="">
+                <div class="cart-goods-list">
+                    <div class="list-head clearfix">
+                        <div class="col col-check"><i class="iconfont icon-checkbox" id="J_selectAll">√</i>全选</div>
+                        <div class="col col-img">&nbsp;</div>
+                        <div class="col col-name">商品名称</div>
+                        <div class="col col-price">单价</div>
+                        <div class="col col-num">数量</div>
+                        <div class="col col-total">小计</div>
+                        <div class="col col-action">操作</div>
+                    </div>
+                    <!-- 模板 -->
+                    <div class="list-body" id="J_cartListBody">
+                        <div class="item-box">
+                            <div class="item-table J_cartGoods"
+                                data-info="{ commodity_id:'1182200004', gettype:'buy', itemid:'2182200004_0_buy', num:'1'} ">
+                                <div class="item-row clearfix">
+                                    <div class="col col-check"> <i
+                                            class="iconfont icon-checkbox icon-checkbox-selected J_itemCheckbox"
+                                            data-itemid="2182200004_0_buy" data-status="1">√</i> </div>
+                                    <div class="col col-img"> <a href="//item.mi.com/1182200004.html" target="_blank">
+                                            <img alt="" src="//i1.mifile.cn/a1/pms_1527836910.35259135!80x80.jpg"
+                                                width="80" height="80"> </a> </div>
+                                    <div class="col col-name">
+                                        <div class="tags"> </div>
+                                        <div class="tags"> </div>
+                                        <h3 class="name"> <a href="//item.mi.com/1182200004.html" target="_blank"> 小米 8
+                                                SE 硅胶保护套 蓝色 </a> </h3>
+                                    </div>
+                                    <div class="col col-price"> 26元 <p class="pre-info"> </p>
+                                    </div>
+                                    <div class="col col-num">
+                                        <div class="change-goods-num clearfix J_changeGoodsNum"> <a
+                                                href="javascript:void(0)" class="J_minus"><i class="iconfont"></i></a>
+                                            <input tyep="text" name="2182200004_0_buy" value="1" data-num="1"
+                                                data-buylimit="20" autocomplete="off"
+                                                class="goods-num J_goodsNum" "=""> <a href=" javascript:void(0)"
+                                                class="J_plus"><i class="iconfont"></i></a> </div>
+                                    </div>
+                                    <div class="col col-total"> 26元 <p class="pre-info"> </p>
+                                    </div>
+                                    <div class="col col-action"> <a id="2182200004_0_buy" data-msg="确定删除吗？"
+                                            href="javascript:void(0);" title="删除" class="del J_delGoods"><i
+                                                class="iconfont"></i></a> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- 加价购 -->
+                <div class="raise-buy-box" id="J_raiseBuyBox">
+                </div>
+
+                <div class="cart-bar clearfix" id="J_cartBar">
+                    <div class="section-left">
+                        <a href="//list.mi.com/0" class="back-shopping J_goShoping" data-stat-id="b16361b4c5491b6d"
+                            onclick="_msq.push(['trackEvent', '5df97b551662ffe7-b16361b4c5491b6d', '#', 'pcpid', '']);">继续购物</a>
+                        <span class="cart-total hide">共 <i id="J_cartTotalNum"></i> 件商品，已选择 <i id="J_selTotalNum"></i>
+                            件</span>
+                        <span class="cart-coudan hide" id="J_coudanTip">
+                            ，还需 <i id="J_postFreeBalance"></i> 元即可免邮费 <a href="javascript:void(0);" id="J_showCoudan"
+                                data-stat-id="cfc8337d6cbfdef7"
+                                onclick="_msq.push(['trackEvent', '5df97b551662ffe7-cfc8337d6cbfdef7', 'javascript:void0', 'pcpid', '']);">立即凑单</a>
+                        </span>
+                    </div>
+                    <span class="activity-money hide">
+                        活动优惠：减 <i id="J_cartActivityMoney">0</i> 元
+                    </span>
+                    <span class="total-price">
+                        合计：<em id="J_cartTotalPrice">00.00</em>元
+                    </span>
+                    <a href="javascript:void(0);" class="btn btn-a btn btn-primary" id="J_goCheckout"
+                        data-stat-id="9bd56b7232f4ef1a"
+                        onclick="_msq.push(['trackEvent', '5df97b551662ffe7-9bd56b7232f4ef1a', 'javascript:void0', 'pcpid', '']);">去结算</a>
+
+                    <div class="no-select-tip hide" id="J_noSelectTip">
+                        请勾选需要结算的商品
+                        <i class="arrow arrow-a"></i>
+                        <i class="arrow arrow-b"></i>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- 删除时显示的模态框 -->
+    <div class="modal-backdrop fade in" style="width: 100%; height: 1830px;display: none;"></div>
+    <div class="modal fade modal-hide  modal-alert in" id="J_modalAlert" aria-hidden="false" style="display: none;">
+        <div class="modal-bd">
+            <div class="text">
+                <h3 id="J_alertMsg">确定删除吗？</h3>
+            </div>
+            <div class="actions">
+                <button class="btn btn-gray" data-dismiss="modal" id="J_alertCancel">取消</button>
+                <button class="btn btn-primary" data-dismiss="modal" id="J_alertOk">确定</button>
+            </div>
+            <a class="close"><i class="iconfont"></i></a>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+
+    <div class="site-footer" style="border-top:1px solid #ccc ">
         <div class="container">
             <div class="footer-service">
                 <ul class="list-service clearfix">
@@ -207,7 +360,6 @@
     </div>
     <div class="site-info">
         <div class="container">
-            <div class="logo ir">小米官网</div>
             <div class="info-text">
                 <p class="sites"><a rel="nofollow" href="https://www.mi.com/index.html" target="_blank"
                         data-stat-id="4bc9b84ee8285a77"
@@ -268,33 +420,33 @@
                         onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-bdfd116c84984884&#39;, &#39;&#39;, &#39;pcpid&#39;, &#39;&#39;]);">mi.com</a>
                     京ICP证110507号
                     <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow" data-stat-id="09f3ca7af7fc3710"
-                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-09f3ca7af7fc3710&#39;, &#39;http://beian.miit.gov.cn/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">京ICP备10046444号</a>
+                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-09f3ca7af7fc3710&#39;, &#39;https://beian.miit.gov.cn/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">京ICP备10046444号</a>
                     <a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134"
                         target="_blank" data-stat-id="e9d2688beb41458a"
-                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-e9d2688beb41458a&#39;, &#39;http://www.beian.gov.cn/portal/registerSystemInforecordcode=11010802020134&#39;, &#39;pcpid&#39;, &#39;&#39;]);">京公网安备11010802020134号
+                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-e9d2688beb41458a&#39;, &#39;https://www.beian.gov.cn/portal/registerSystemInforecordcode=11010802020134&#39;, &#39;pcpid&#39;, &#39;&#39;]);">京公网安备11010802020134号
                     </a>
                     <a href="https://www.mi.com/culture-license/" target="_blank" data-stat-id="059ce48ed7ed6a36"
-                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-059ce48ed7ed6a36&#39;, &#39;//www.mi.com/culture-license/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">京网文[2017]1530-131号</a>
+                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-059ce48ed7ed6a36&#39;, &#39;https://www.mi.com/culture-license/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">京网文[2017]1530-131号</a>
                     <br>
                     <a href="https://www.mi.com/medical/record/" target="_blank" data-stat-id="97cdd5ee52424ea3"
-                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-97cdd5ee52424ea3&#39;, &#39;//www.mi.com/medical/record/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">（京）网械平台备字（2018）第00005号
+                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-97cdd5ee52424ea3&#39;, &#39;https://www.mi.com/medical/record/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">（京）网械平台备字（2018）第00005号
                     </a>
                     <a href="https://www.mi.com/medical/qualification/" target="_blank" data-stat-id="f4696bf96a52cdae"
-                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-f4696bf96a52cdae&#39;, &#39;//www.mi.com/medical/qualification/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">互联网药品信息服务资格证
+                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-f4696bf96a52cdae&#39;, &#39;https://www.mi.com/medical/qualification/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">互联网药品信息服务资格证
                         (京) -非经营性-2014-0090
                     </a>
                     <a href="https://www.mi.com/business-license/" target="_blank" data-stat-id="3ed1ade2d90f5e8a"
-                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-3ed1ade2d90f5e8a&#39;, &#39;//www.mi.com/business-license/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">营业执照</a>
+                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-3ed1ade2d90f5e8a&#39;, &#39;https://www.mi.com/business-license/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">营业执照</a>
                     <a href="https://www.mi.com/medical/list/" target="_blank" data-stat-id="5186b38734e64ad1"
-                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-5186b38734e64ad1&#39;, &#39;//www.mi.com/medical/list/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">医疗器械公告</a>
+                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-5186b38734e64ad1&#39;, &#39;https://www.mi.com/medical/list/&#39;, &#39;pcpid&#39;, &#39;&#39;]);">医疗器械公告</a>
                     <br>
                     <a href="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/af5b8ef38e7d57c5ee7fa4289ccf4df8.png"
                         target="_blank" data-stat-id="22eb6b5cf4b462d7"
-                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-22eb6b5cf4b462d7&#39;, &#39;//cdn.cnbj1.fds.api.mi-img.com/mi-mall/af5b8ef38e7d57c5ee7fa4289ccf4df8.png&#39;, &#39;pcpid&#39;, &#39;&#39;]);">增值电信业务许可证</a>&nbsp;
+                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-22eb6b5cf4b462d7&#39;, &#39;https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/af5b8ef38e7d57c5ee7fa4289ccf4df8.png&#39;, &#39;pcpid&#39;, &#39;&#39;]);">增值电信业务许可证</a>&nbsp;
                     网络食品经营备案（京）【2018】WLSPJYBAHF-12 &nbsp;
                     <a href="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fe7383e11127caea371f17156f429a1e.png"
                         target="_blank" data-stat-id="911257f4cef77495"
-                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-911257f4cef77495&#39;, &#39;//cdn.cnbj1.fds.api.mi-img.com/mi-mall/fe7383e11127caea371f17156f429a1e.png&#39;, &#39;pcpid&#39;, &#39;&#39;]);">食品经营许可证</a>
+                        onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-911257f4cef77495&#39;, &#39;https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fe7383e11127caea371f17156f429a1e.png&#39;, &#39;pcpid&#39;, &#39;&#39;]);">食品经营许可证</a>
                     <br>违法和不良信息举报电话：185-0130-1238 <a href="https://www.mi.com/static/intellectual/index.html"
                         target="_blank" data-stat-id="1f66dd3b1b0f7218"
                         onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-1f66dd3b1b0f7218&#39;, &#39;https://www.mi.com/static/intellectual/index.html&#39;, &#39;pcpid&#39;, &#39;&#39;]);">知识产权侵权投诉</a>
@@ -304,41 +456,42 @@
                 <a rel="nofollow"
                     href="https://privacy.truste.com/privacy-seal/validation?rid=4fc28a8c-6822-4980-9c4b-9fdc69b94eb8&amp;lang=zh-cn"
                     target="_blank" data-stat-id="d79bd36766f023f0"
-                    onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-d79bd36766f023f0&#39;, &#39;//privacy.truste.com/privacy-seal/validationrid=4fc28a8c-6822-4980-9c4b-9fdc69b94eb8&amp;lang=zh-cn&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                        rel="nofollow" src="img/truste.png" alt="TRUSTe Privacy Certification"></a>
+                    onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-d79bd36766f023f0&#39;, &#39;https://privacy.truste.com/privacy-seal/validationrid=4fc28a8c-6822-4980-9c4b-9fdc69b94eb8&amp;lang=zh-cn&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
+                        rel="nofollow" src="https://i1.mifile.cn/f/i/17/site/truste.png"
+                        alt="TRUSTe Privacy Certification"></a>
                 <a rel="nofollow" href="https://search.szfw.org/cert/l/CX20120926001783002010" target="_blank"
                     data-stat-id="f0877449bc91038d"
-                    onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-f0877449bc91038d&#39;, &#39;//search.szfw.org/cert/l/CX20120926001783002010&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                        rel="nofollow" src="img/v-logo-2.png" alt="诚信网站"></a>
+                    onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-f0877449bc91038d&#39;, &#39;https://search.szfw.org/cert/l/CX20120926001783002010&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
+                        rel="nofollow" src="https://s01.mifile.cn/i/v-logo-1.png" alt="诚信网站"></a>
                 <a rel="nofollow"
                     href="https://ss.knet.cn/verifyseal.dll?sn=e12033011010015771301369&amp;ct=df&amp;pa=461082"
                     target="_blank" data-stat-id="2173f8773b3dc666"
                     onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-2173f8773b3dc666&#39;, &#39;https://ss.knet.cn/verifyseal.dllsn=e12033011010015771301369&amp;ct=df&amp;pa=461082&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                        rel="nofollow" src="img/v-logo-1.png" alt="可信网站"></a>
+                        rel="nofollow" src="https://s01.mifile.cn/i/v-logo-2.png" alt="可信网站"></a>
                 <a rel="nofollow" href="http://www.315online.com.cn/member/315140007.html" target="_blank"
                     data-stat-id="d2aa5eabb354499e"
                     onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-d2aa5eabb354499e&#39;, &#39;http://www.315online.com.cn/member/315140007.html&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                        rel="nofollow" src="img/v-logo-3.png" alt="网上交易保障中心"></a>
+                        rel="nofollow" src="https://s01.mifile.cn/i/v-logo-3.png" alt="网上交易保障中心"></a>
                 <a rel="nofollow" href="https://www.mi.com/service/buy/commitment/" target="_blank"
                     data-stat-id="075070cd3386be85"
                     onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-075070cd3386be85&#39;, &#39;https://www.mi.com/service/buy/commitment/&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><img
-                        rel="nofollow" src="img/ba10428a4f9495ac310fd0b5e0cf8370.png" alt="诚信经营 放心消费"></a>
+                        rel="nofollow" src="https://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png"
+                        alt="诚信经营 放心消费"></a>
             </div>
         </div>
         <div class="slogan ir">探索黑科技，小米为发烧而生</div>
     </div>
-
-    <div id="J_modalWeixin" class="modal fade modal-hide modal-weixin" data-width="480" data-height="520">
+    <!-- <div id="J_modalWeixin" class="modal fade modal-hide modal-weixin" data-width="480" data-height="520">
         <div class="modal-hd">
-            <a class="close" data-dismiss="modal" data-stat-id="a0641baa711604bc"
-                onclick="_msq.push([&#39;trackEvent&#39;, &#39;81190ccc4d52f577-a0641baa711604bc&#39;, &#39;&#39;, &#39;pcpid&#39;, &#39;&#39;]);"><i
-                    class="iconfont"></i></a>
+            <a class="close" data-dismiss="modal" data-stat-id="a0641baa711604bc"><i class="iconfont"></i></a>
             <span class="title">小米手机官方微信二维码</span>
         </div>
         <div class="modal-bd">
-            <img alt="" src="img/weixin.jpg" width="680" height="340">
+            <img alt="" src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" width="680" height="340">
         </div>
+    </div> -->
     </div>
+    <script src="script/js/cart.js"></script>
 </body>
 
 </html>

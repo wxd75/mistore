@@ -1,4 +1,18 @@
-class headerblock {
+function xmsearch(data) {    // 搜索框的
+    let ul = document.querySelector('#J_keywordList');
+    let li = document.querySelectorAll('#J_keywordList li');
+    for (let i = 0; i < li.length; i++) {
+        ul.removeChild(li[i]);
+    }
+    console.log(data);
+    for (let i = 0; i < data.length; i++) {
+        let li = document.createElement('li');
+        li.innerHTML = `${data[i].Key}`;
+        $('#J_keywordList').append(li);
+    }
+}
+
+class headerblock {            // 头部2级导航
     constructor() {
         this.all = $('#J_navCategory');
         this.onecd = $('.site-category');
@@ -25,7 +39,7 @@ class headerblock {
 new headerblock().init();
 
 
-class sousuo {
+class sousuo {       //搜索框
     constructor() {
         this.kuang = $('.search-text');
         this.ul = $('#J_keywordList');
@@ -64,21 +78,9 @@ class sousuo {
 
 }
 new sousuo().sou();
-function xmsearch(data) {
-    let ul = document.querySelector('#J_keywordList');
-    let li = document.querySelectorAll('#J_keywordList li');
-    for (let i = 0; i < li.length; i++) {
-        ul.removeChild(li[i]);
-    }
-    console.log(data);
-    for (let i = 0; i < data.length; i++) {
-        let li = document.createElement('li');
-        li.innerHTML = `${data[i].Key}`;
-        $('#J_keywordList').append(li);
-    }
-}
 
-class load {
+
+class load {        //渲染
     constructor() {
         this.picid = location.search.substring(1).split('=')[1];
         this.head = $('.J_navSwitch .J_proName');
@@ -98,7 +100,7 @@ class load {
         // console.log(this.sumprice);
         let that = this;
         $.ajax({
-            url: "http://10.31.164.49/mistore/php/chuan.php",
+            url: "http://localhost/mistore/php/chuan.php",
             data: {
                 sid: this.picid
             },
@@ -121,3 +123,61 @@ class load {
 
 new load().lo();
 
+class addcart {      //加购
+    constructor() {
+        this.addcart = $('.J_proBuyBtn');
+        this.picid = location.search.split('=')[1];
+    }
+
+    add() {
+        let _this = this;
+        this.addcart.on('click',function(){
+            //点击往cookie加当前页面上id的
+            // console.log(_this.picid);
+            let arr1 = [123123,123123123123123],
+                arr2 = [123123123,23454322432];
+            $.cookie(arr1.join(','),arr2.join(','),{ expires: 1});
+            // cookietoarray();
+        })
+    }
+}
+
+new addcart().add();
+
+
+class turelogin {  // 头部的登录状态的改变
+    constructor() {
+        this.hidea = $('.topbar-info .link');
+        this.hidespan = $('.topbar-info .sep');
+        this.show = $('.topbar-info .loginture');
+        this.message = $('.topbar-info .message');
+        this.exit = $('.topbar-info .exit');
+    }
+
+    fuk() {
+        // alert(getCookie('UserName'));
+        let that = this;
+        if ($.cookie('UserName')) {    // 判断有没有UserName 的cookie
+            this.hidea.hide();
+            this.hidespan.hide();
+            this.show.show();
+            this.message.css('float', 'inherit');
+            this.show.children('.username').html($.cookie('UserName'));
+            this.exit.show();
+        }
+
+        this.exit.on('click', function () {
+            that.exiti();
+        })
+    }
+
+    exiti() {
+        // let baga = $.cookie('UserName');
+        $.cookie('UserName', '', { expires: -1 });  //删除
+        history.go(0);
+    }
+
+
+}
+
+new turelogin().fuk()
